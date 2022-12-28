@@ -26,7 +26,10 @@ function App() {
 
   useEffect(()=>{
     (async () => {
-      const interceptRes = await axiosInstance.get('http://localhost:4000/api/hello');
+      // let tempReq = 'http://localhost:4000/api/hello';
+      let tempReq = '15.164.141.28:80/api/hello';
+
+      const interceptRes = await axiosInstance.get(tempReq);
       console.log('axios intercept res >>> ' + interceptRes.data);
       setMessage('front 로 넘어오기전에 가공을 하고 ~ '+ interceptRes.data);
     })();
